@@ -1,37 +1,37 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
-    'config:best-practices',
-    ':gitSignOff',
-    'helpers:pinGitHubActionDigests',
+    "config:best-practices",
+    ":gitSignOff",
+    "helpers:pinGitHubActionDigests",
   ],
   pinDigests: true,
-  ignorePresets: [':prHourlyLimit2',],
+  ignorePresets: [":prHourlyLimit2",],
   separateMajorMinor: true,
   separateMultipleMajor: true,
   separateMinorPatch: true,
   pruneStaleBranches: true,
   baseBranches: [
-    'main',
+    "main",
   ],
   vulnerabilityAlerts: {
     enabled: true,
   },
   labels: [
-    'renovate/stop-updating',
+    "renovate/stop-updating",
   ],
-  stopUpdatingLabel: 'renovate/stop-updating',
+  stopUpdatingLabel: "renovate/stop-updating",
   packageRules: [
     {
       // Images that extend registry.redhat.io/ubi9
-      groupName: 'base-images',
+      groupName: "base-images",
       matchFileNames: [
-        'Dockerfile',
+        "Dockerfile",
       ],
       matchPackageNames: [
-        'registry.redhat.io/ubi9',
+        "registry.redhat.io/ubi9",
       ],
-      versioning: 'semver',
+      versioning: "semver",
     },
   ],
 }
